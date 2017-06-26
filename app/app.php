@@ -45,6 +45,9 @@
     });
 
     $app->get("/parcel_calc", function() {
+        if ((empty($_GET['length'])) || (empty($_GET['width'])) || (empty($_GET['height'])) || (empty($_GET['weight'])) || (empty($_GET['distance']))) {
+            return "Please hit the Back button and make sure all fields are filled.";
+        } else {
         $new_parcel = new Parcel($_GET['length'], $_GET['width'], $_GET['height'], $_GET['weight'], $_GET['distance']);
         return "<h2>Your Order:</h2>
         <p>Length: " . $new_parcel->getLength() . "</p>
@@ -54,6 +57,7 @@
         <p>Volume: " . $new_parcel->volume() . "</p>
         <p>Distance: " . $new_parcel->getDistance() . "</p>
         <h2>Cost to Ship: " . $new_parcel->costToShip() . "</h2>";
+        }
     });
 
     return $app;
