@@ -46,7 +46,8 @@
         <p>Length: " . $new_parcel->getLength() . "</p>
         <p>Width: " . $new_parcel->getWidth() . "</p>
         <p>Height: " . $new_parcel->getHeight() . "</p>
-        <p>Weight: " . $new_parcel->getWeight() . "</p>";
+        <p>Weight: " . $new_parcel->getWeight() . "</p>
+        <p>Volume: " . $new_parcel->volume() . "</p>";
     });
 
     return $app;

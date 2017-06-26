@@ -14,6 +14,11 @@
             $this->weight = $weight;
         }
 
+        function volume()
+        {
+            return $this->length * $this->width * $this->height;
+        }
+
         function getLength()
         {
             return $this->length;
