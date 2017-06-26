@@ -21,6 +21,11 @@
             return $this->length * $this->width * $this->height;
         }
 
+        function costToShip()
+        {
+            return (0.003 * $this->distance * $this->weight) + (0.10 * $this->length * $this->width * $this->height);
+        }
+
         function getLength()
         {
             return $this->length;

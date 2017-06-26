@@ -52,7 +52,8 @@
         <p>Height: " . $new_parcel->getHeight() . "</p>
         <p>Weight: " . $new_parcel->getWeight() . "</p>
         <p>Volume: " . $new_parcel->volume() . "</p>
-        <p>Distance: " . $new_parcel->getDistance() . "</p>";
+        <p>Distance: " . $new_parcel->getDistance() . "</p>
+        <h2>Cost to Ship: " . $new_parcel->costToShip() . "</h2>";
     });
 
     return $app;
