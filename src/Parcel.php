@@ -6,6 +6,7 @@
         private $height;
         private $weight;
         private $distance;
+        private $volume;
 
         function __construct($length, $width, $height, $weight, $distance)
         {
@@ -14,6 +15,7 @@
             $this->height = $height;
             $this->weight = $weight;
             $this->distance = $distance;
+            $this->volume = $this->volume();
         }
 
         function volume()
@@ -23,7 +25,7 @@
 
         function costToShip()
         {
-            return (0.003 * $this->distance * $this->weight) + (0.10 * $this->length * $this->width * $this->height);
+            return (0.003 * $this->distance * $this->weight) + (0.10 * $this->volume);
         }
 
         function getLength()
@@ -49,6 +51,11 @@
         function getDistance()
         {
             return $this->distance;
+        }
+
+        function getVolume()
+        {
+            return $this->volume;
         }
 
         function setLength($new_length)
