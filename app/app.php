@@ -33,6 +33,10 @@
                         <label for='weight'>Enter the package weight: </label>
                         <input type='number' name='weight'>
                     </div>
+                    <div class='form-group'>
+                        <label for='distance'>Enter the distance in miles: </label>
+                        <input type='number' name='distance'>
+                    </div>
                     <button type='submit' class='btn btn-primary' name='button'>Calculate my cost!</button>
                 </form>
             </body>
@@ -41,13 +45,14 @@
     });
 
     $app->get("/parcel_calc", function() {
-        $new_parcel = new Parcel($_GET['length'], $_GET['width'], $_GET['height'], $_GET['weight']);
+        $new_parcel = new Parcel($_GET['length'], $_GET['width'], $_GET['height'], $_GET['weight'], $_GET['distance']);
         return "<h2>Your Order:</h2>
         <p>Length: " . $new_parcel->getLength() . "</p>
         <p>Width: " . $new_parcel->getWidth() . "</p>
         <p>Height: " . $new_parcel->getHeight() . "</p>
         <p>Weight: " . $new_parcel->getWeight() . "</p>
-        <p>Volume: " . $new_parcel->volume() . "</p>";
+        <p>Volume: " . $new_parcel->volume() . "</p>
+        <p>Distance: " . $new_parcel->getDistance() . "</p>";
     });
 
     return $app;
