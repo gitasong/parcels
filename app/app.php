@@ -41,7 +41,12 @@
     });
 
     $app->get("/parcel_calc", function() {
-        return "The cost of your package is: ";
+        $new_parcel = new Parcel($_GET['length'], $_GET['width'], $_GET['height'], $_GET['weight']);
+        return "<h2>Your Order:</h2>
+        <p>Length: " . $new_parcel->getLength() . "</p>
+        <p>Width: " . $new_parcel->getWidth() . "</p>
+        <p>Height: " . $new_parcel->getHeight() . "</p>
+        <p>Weight: " . $new_parcel->getWeight() . "</p>";
     });
 
     return $app;
